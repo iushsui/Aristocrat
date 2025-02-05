@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Add this in the <head> section -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i|Playfair+Display:400,400i,700|Lato:300,400,700|Nothing+You+Could+Do&display=swap" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+
+	<!-- Coffee Demo Specific Stylesheet -->
+	<link rel="stylesheet" href="demos/cafe/cafe.css" type="text/css" />
+	<!-- / -->
+
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="demos/cafe/css/fonts.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" href="css/colors.php?color=c0bb62" type="text/css" />
+
+	<!-- SLIDER REVOLUTION 5.x CSS SETTINGS -->
+	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/settings.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/layers.css">
+	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/navigation.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        /* * { margin: 0; padding: 0; box-sizing: border-box; } */
+
+        /* Background & Overlay */
+        /* body {
+            background: url('https://images.unsplash.com/photo-1600271886742-f049cd451bba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+            height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            position: relative;
+        } */
+        .overlay {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        /* Content Styling */
+        .logo { width: 180px; margin-bottom: 30px; }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #fbead4;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        p { color: white; margin-bottom: 30px; text-align: center; }
+
+        /* Form Elements */
+        .dob-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        select {
+            background: #2C2C2C;
+            color: white;
+            border: 1px solid #fbead4;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        button {
+            background: #fbead4;
+            color: #2C2C2C;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        button:hover { transform: scale(1.05); }
+        .exit-link {
+            color: #888;
+            margin-top: 15px;
+            text-decoration: none;
+        }
+        .legal {
+            position: fixed;
+            bottom: 20px;
+            color: #666;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .dob-selector { flex-direction: column; }
+            select { width: 100%; }
+        }
+    </style>
+
+	<!-- Document Title
+	============================================= -->
+	<title>Cafe | Canvas</title>
+
+</head>
+
+<body class="stretched overlay-menu dark" data-loader-html="<div><img src='demos/cafe/images/icons/loader.gif' alt='Loader'></div>">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		
+
+		<!-- Header
+		============================================= -->
+		<!-- <header id="header" class="transparent-header dark no-sticky"> -->
+		
+
+		<!-- Content
+		============================================= -->
+		<div class="overlay">
+            <!-- Replace with your logo URL -->
+            <img src="/demos/cafe/images/ast-logo.png" class="logo" alt="Aristocrat Whiskey">
+            <h1>Welcome to Aristocrat</h1>
+            <p>To experience our premium whiskey, confirm you're 18+</p>
+            
+            <div class="dob-selector">
+                <select id="day">
+                    <option>DD</option>
+                    <!-- Add days dynamically in real project -->
+                </select>
+                <select id="month">
+                    <option>MM</option>
+                    <!-- Add months -->
+                </select>
+                <select id="year">
+                    <option>YYYY</option>
+                    <!-- Add years -->
+                </select>
+            </div>
+    
+            <button onclick="validateAge()">Enter Site</button>
+            <a href="https://google.com" class="exit-link">Exit</a>
+            
+            <p class="legal">By entering, you agree to our Terms and Nepal's legal drinking age (18+)</p>
+        </div>
+
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/plugins.min.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+
+	<!-- SLIDER REVOLUTION 5.x SCRIPTS  -->
+	<script src="include/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+	<script src="include/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+	<script src="include/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
+	<script src="include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
+	<script src="include/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
+	<script src="include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
+	<script src="include/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
+	<script src="include/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
+
+	<script>
+		var tpj = jQuery;
+
+		var revapi206;
+		var $ = jQuery.noConflict();
+		tpj(document).ready(function() {
+			if (tpj("#rev_slider_206_1").revolution == undefined) {
+				revslider_showDoubleJqueryError("#rev_slider_206_1");
+			} else {
+				revapi206 = tpj("#rev_slider_206_1").show().revolution({
+					sliderType: "standard",
+					jsFileLocation: "include/rs-plugin/js/",
+					sliderLayout: "fullscreen",
+					dottedOverlay: "none",
+					delay: 9000,
+					navigation: {
+						keyboardNavigation: "off",
+						keyboard_direction: "horizontal",
+						mouseScrollNavigation: "off",
+						onHoverStop: "off",
+						touch: {
+							touchenabled: "on",
+							swipe_threshold: 75,
+							swipe_min_touches: 50,
+							swipe_direction: "horizontal",
+							drag_block_vertical: false
+						},
+						tabs: {
+							style: "metis",
+							enable: false,
+						}
+					},
+					responsiveLevels: [1240, 1024, 778, 480],
+					visibilityLevels: [1240, 1024, 778, 480],
+					gridwidth: [1240, 1024, 778, 480],
+					gridheight: [868, 768, 960, 720],
+					lazyType: "none",
+					parallax: {
+						type: "3D",
+						origo: "slidercenter",
+						speed: 1000,
+						levels: [2, 4, 6, 8, 10, 12, 14, 16, 45, 50, 47, 48, 49, 50, 0, 50],
+						type: "3D",
+						ddd_shadow: "off",
+						ddd_bgfreeze: "on",
+						ddd_overflow: "hidden",
+						ddd_layer_overflow: "visible",
+						ddd_z_correction: 100,
+					},
+					spinner: "off",
+					stopLoop: "on",
+					stopAfterLoops: 0,
+					stopAtSlide: 1,
+					shuffle: "off",
+					autoHeight: "off",
+					fullScreenAutoWidth: "off",
+					fullScreenAlignForce: "off",
+					fullScreenOffsetContainer: "",
+					fullScreenOffset: "0",
+					disableProgressBar: "on",
+					hideThumbsOnMobile: "off",
+					hideSliderAtLimit: 0,
+					hideCaptionAtLimit: 0,
+					hideAllCaptionAtLilmit: 0,
+					debugMode: false,
+					fallbacks: {
+						simplifyAll: "off",
+						nextSlideOnWindowFocus: "off",
+						disableFocusListener: false,
+					}
+				});
+			}
+		}); /*ready*/
+	</script>
+
+
+    <script>
+        // Age Validation Logic
+        function validateAge() {
+            const day = document.getElementById('day').value;
+            const month = document.getElementById('month').value;
+            const year = document.getElementById('year').value;
+            
+            // For demo purposes only (add full validation later)
+            if (year <= 2005) {
+                localStorage.setItem('ageVerified', 'true');
+                window.location.href = "/home";
+            } else {
+                alert("You must be 18+ to enter.");
+            }
+        }
+
+        // Check if already verified
+        if (localStorage.getItem('ageVerified') === 'true') {
+            window.location.href = "/home";
+        }
+    </script>
+
+</body>
+</html>
